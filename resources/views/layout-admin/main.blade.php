@@ -91,27 +91,18 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        <li class="active">
-                            <a class="has-arrow" href="index.html">
-                                <i class="icon nalika-home icon-wrap"></i>
-                                <span class="mini-click-non">Ecommerce</span>
-                            </a>
-                            <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard
-                                            v.1</span></a></li>
-                                <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard
-                                            v.2</span></a></li>
-                            </ul>
-                        </li>
+
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i
                                     class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data
                                     Tables</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Data Table" href="/barang"><span
-                                            class="mini-sub-pro">Barang</span></a></li>
+                                <li><a title="Data Table" href="/barang"><span class="mini-sub-pro">Barang</span></a>
+                                </li>
                                 <li><a title="Data Table" href="/pelanggan"><span
                                             class="mini-sub-pro">Pelanggan</span></a></li>
+                                <li><a title="Data Table" href="/supplier"><span
+                                            class="mini-sub-pro">Supplier</span></a></li>
                                 <li><a title="Data Table" href="data-table.html"><span
                                             class="mini-sub-pro">Pembelian</span></a></li>
                                 <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Laporan
