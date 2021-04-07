@@ -10,11 +10,17 @@
                     <div class="add-product">
                         <a href="barang/create">Tambah Barang</a>
                     </div>
+                    @if(session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status')}}
+                        </div>
+                    @endif
                     <table>
                         <tr>
                             <th>No</th>
                             <th>Nama Barang</th>
                             <th>Harga Barang</th>
+                            <th>Harga Supplier</th>
                             <th>Ukuran Barang</th>
                             <th>Warna Barang</th>
                             <th>Stok Barang</th>
@@ -26,6 +32,7 @@
                             <td>1</td>
                             <td>{{$item->nama_barang}}</td>
                             <td>{{$item->harga}}</td>
+                            <td>{{$item->harga_agen}}</td>
                             <td>{{$item->ukuran}}</td>
                             <td>{{$item->warna}}</td>
                             <td>{{$item->stok_barang}}</td>
@@ -38,8 +45,9 @@
                                     <!-- <a href="barang/{!!$item->id!!}"> -->
                                         <a href="barang/{!!$item->id!!}/edit" data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <!-- </a> -->
-                                    <button type="submit" data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <button type="submit" data-toggle="tooltip" title="Trash" class="pd-setting-ed">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </button>
                                 </form>
 
                             </td>

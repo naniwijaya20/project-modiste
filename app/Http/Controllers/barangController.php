@@ -38,9 +38,17 @@ class barangController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            ['nama_barang' => 'required'],
+            ['ukuran' => 'required'],
+            ['warna' => 'required'],
+            ['harga' => 'required'],
+            ['harga_agen' => 'required'],
+            ['stok_barang' => 'required']
+        );
+
         Barang::create($request->all());
-        return redirect()->route('barang.index')
-        ->with('success','Barang created successfully.');
+        return redirect()->route('barang.index')->with('status','Barang Telah Disimpian.');
         //
         //
     }

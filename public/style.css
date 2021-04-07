@@ -3667,3 +3667,21 @@ th.fc-day-header.fc-widget-header {
 	border-color: #152036;
 	color:#fff;
 }
+
+.tool .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1000;
+}
+
+.tool:hover .tooltiptext {
+  visibility: visible;
+}
