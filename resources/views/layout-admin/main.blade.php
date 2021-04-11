@@ -93,7 +93,7 @@
                 </li>
                 <li><a title="Data Table" href="/pelanggan"><span class="mini-sub-pro">Pelanggan</span></a></li>
                 <li><a title="Data Table" href="/supplier"><span class="mini-sub-pro">Supplier</span></a></li>
-                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Pembelian</span></a></li>
+                <li><a title="Data Table" href="/pembelian"><span class="mini-sub-pro">Pembelian</span></a></li>
                 <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Laporan Penjualan Bulanan</span></a></li>
                 <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Laporan
                       Pembelian Bulanan</span></a></li>
