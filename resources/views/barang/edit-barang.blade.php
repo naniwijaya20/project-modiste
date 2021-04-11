@@ -13,7 +13,7 @@
             </ul>
             <div id="myTabContent" class="tab-content custom-product-edit">
               @foreach($barangEdit as $item)
-              <form action="{{route('barang.update',$item->id)}}" method="POST">
+              <form action="{{route('barang.update',$item->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
 
@@ -55,7 +55,7 @@
                         </div>
                         <div class="input-group mg-b-pro-edt">
                           <span class="input-group-addon"><i class="fa fa-camera" aria-hidden="true"></i></span>
-                          <input type="file" class="form-control" placeholder="Gambar Barang">
+                          <input type="file" name="foto" class="form-control" placeholder="Gambar Barang" required>
                         </div>
                       </div>
                     </div>

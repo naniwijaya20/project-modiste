@@ -12,7 +12,7 @@
               <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Product Edit</a></li>
             </ul>
             <div id="myTabContent" class="tab-content custom-product-edit">
-              <form action="{{route('barang.store')}}" method="POST">
+              <form action="{{route('barang.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="product-tab-list tab-pane fade active in" id="description">
 
@@ -49,7 +49,7 @@
                         </div>
                         <div class="input-group mg-b-pro-edt">
                           <span class="input-group-addon"><i class="fa fa-camera" aria-hidden="true"></i></span>
-                          <input type="file" class="form-control" placeholder="Gambar Barang">
+                          <input type="file" class="form-control" name="foto" placeholder="Gambar Barang">
                         </div>
                       </div>
                     </div>

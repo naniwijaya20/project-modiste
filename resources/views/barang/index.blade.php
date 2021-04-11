@@ -36,7 +36,7 @@
                             <td>{{$item->ukuran}}</td>
                             <td>{{$item->warna}}</td>
                             <td>{{$item->stok_barang}}</td>
-                            <td>xxxx</td>
+                            <td><img src="{{asset('img/barang/' . $item->foto . '')}}" alt=""></td>
                             <td>
 
                                 <form action="{{route('barang.destroy',$item->id)}}" method="post">

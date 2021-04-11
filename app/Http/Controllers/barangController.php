@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Barang;
 
@@ -38,19 +38,30 @@ class barangController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            ['nama_barang' => 'required'],
-            ['ukuran' => 'required'],
-            ['warna' => 'required'],
-            ['harga' => 'required'],
-            ['harga_agen' => 'required'],
-            ['stok_barang' => 'required']
-        );
 
-        Barang::create($request->all());
+        $namaFile = $_FILES['foto']['name'];
+        $targetUpload = "img/barang/";
+
+        $namaFotoDefault = "default.png";
+
+        $tmp = $_FILES['foto']['tmp_name'];
+        
+       
+        if($namaFile === ""){
+            $input = $request->all();
+            $input['foto'] = $namaFotoDefault;
+            Barang::create($input);
+            return redirect()->route('barang.index')->with('status','Barang Telah Disimpian.');
+        }
+
+
+        $input = $request->all();
+        $input['foto'] = $namaFile;
+        move_uploaded_file($tmp, $targetUpload.$namaFile);
+
+        Barang::create($input);
+
         return redirect()->route('barang.index')->with('status','Barang Telah Disimpian.');
-        //
-        //
     }
 
     /**
@@ -87,15 +98,35 @@ class barangController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $namaFile = $_FILES['foto']['name'];
+        $targetUpload = "img/barang/";
+        $tmp = $_FILES['foto']['tmp_name'];
+
         $barang = Barang::find($id);
+
+        $fotoLama = $barang->foto;
+
         $barang->nama_barang = $request->nama_barang;
         $barang->ukuran = $request->ukuran;
         $barang->warna = $request->warna;
         $barang->harga = $request->harga;
         $barang->stok_barang = $request->stok_barang;
+        $barang->foto = $namaFile;
+    
+        if($fotoLama === 'default.png' || $fotoLama === null){
+            move_uploaded_file($tmp, $targetUpload.$namaFile);
+            $barang->save();
+            return redirect()->route('barang.index');
+        };
+
+        unlink($targetUpload.$fotoLama);
+
+        move_uploaded_file($tmp, $targetUpload.$namaFile);
         $barang->save();
         return redirect()->route('barang.index');
-        //
+
+
+        
     }
 
     /**
@@ -106,7 +137,21 @@ class barangController extends Controller
      */
     public function destroy($id)
     {
+        $targetUpload = "img/barang/";
+        $foto = Barang::find($id);
+
+        // dd($foto);
+
+        if($foto->foto === "default.png" || $foto->foto === null)
+        {
+            Barang::where('id',$id)->delete();
+            return redirect()->route('barang.index');
+        }
+        unlink($targetUpload.$foto->foto);
+
+
         Barang::where('id',$id)->delete();
+
         return redirect()->route('barang.index');
         //
     }
