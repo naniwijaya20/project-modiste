@@ -20,7 +20,7 @@
                             <div class="col-md-3">
                                 <div class="hpanel mt-b-30">
                                     <div class="panel-body file-body file-cs-ctn">
-                                        <i class="fa fa-file-png-o text-info"></i>
+                                        <i class="fa fa-file-pdf-o text-info"></i>
                                     </div>
                                     <div class="panel-footer">
                                         <a href="#">gambar</a>
