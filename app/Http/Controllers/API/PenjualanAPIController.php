@@ -4,58 +4,57 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Supplier;
+use App\Penjualan;
 
-class SupplierAPIController extends Controller
+class PenjualanAPIController extends Controller
 {
     public function index()
     {
-        $supplier = Supplier::all();
+        $penjaualan = Penjualan::all();
         return response()->json([
             'message'=>'Data berhasil mengambil data prodi',
             'status'=>'sukses',
-            'data'=>$supplier],200);
+            'data'=>$penjaualan],200);
     }
 
     public function store(Request $request)
     {
         $input = $request->all();
-        $supplier = Supplier::create($input);
+        $penjaualan = Penjualan::create($input);
         return response()->json([
             'messagge'=>'Data berhasil ditambahkan',
             'status'=>'sukses',
-            'data'=>$supplier],201);
-        }
+            'data'=>$penjaualan],201);
+    }
 
-        public function update(Request $request, $id)
+    public function update(Request $request, $id)
         {
             $input = $request->all();
-            $supplier = Supplier::find($id);
-            if (empty($supplier)){
+            $penjaualan = Penjualan::find($id);
+            if (empty($penjaualan)){
                 return response()->json([
                     'message'=>'Data tidak ditemukan',
                     'status'=>'gagal'], 404);
                 }
                 
-                $supplier->update($input);
+                $penjaualan->update($input);
                 return response()->json([
                     'message'=>'Data berhasil di update',
                     'status'=>'sukses',
-                    'data' => $supplier
+                    'data' => $penjaualan
                 ],200);
             }
             public function destroy($id)
             {
-                $supplier = Supplier::find($id);
-                if (empty($supplier)){
+                $penjaualan = Penjualan::find($id);
+                if (empty($penjaualan)){
                     return response()->json([
                         'message'=>'Data tidak ditemukan',
                         'status'=>'gagal'], 404);
                     }
-                    $supplier->delete();
+                    $penjaualan->delete();
                     return response()->json([
                         'message'=>'Data berhasil di hapus',
                         'status'=>'sukses'],200);
             }
-            
 }

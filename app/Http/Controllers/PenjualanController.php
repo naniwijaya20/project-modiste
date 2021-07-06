@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-use App\Barang;
 
-class pembelianController extends Controller
+use App\Penjualan;
+use Illuminate\Http\Request;
+
+class PenjualanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class pembelianController extends Controller
      */
     public function index()
     {
-        $barang=Pembelian::all();
-        return view('pembelian.index',compact('pembelian'));
-        //
+        $barang=Penjualan::all();
+        return view('penjualan.index',compact('penjualan'));
     }
 
     /**
@@ -37,15 +36,16 @@ class pembelianController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Penjualan $penjualan)
     {
         //
     }
@@ -53,31 +53,34 @@ class pembelianController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Penjualan $penjualan)
     {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Penjualan $penjualan)
     {
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Penjualan $penjualan)
     {
+        //
     }
 }

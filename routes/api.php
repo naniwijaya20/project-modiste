@@ -18,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('supplier', 'API\SupplierAPIController');
+Route::resource('barang', 'API\BarangAPIController');
+Route::resource('penjualan', 'API\PenjualanAPIController');
 
