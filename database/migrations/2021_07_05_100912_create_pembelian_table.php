@@ -14,7 +14,9 @@ class CreatePembelianTable extends Migration
     public function up()
     {
         Schema::create('pembelian', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id')->autoIncrement();
+            $table->date('tanggal');
+            $table->int('total');
             $table->timestamps();
         });
     }

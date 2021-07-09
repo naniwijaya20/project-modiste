@@ -14,7 +14,12 @@ class CreateDetailPenjualanTable extends Migration
     public function up()
     {
         Schema::create('detail_penjualan', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id')->autoIncrement();
+            $table->int('penjualan_id');
+            $table->int('pelanggan_id');
+            $table->int('barang_id');
+            $table->int('jumlah');
+            $table->int('total');
             $table->timestamps();
         });
     }

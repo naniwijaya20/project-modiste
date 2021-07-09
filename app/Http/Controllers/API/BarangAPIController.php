@@ -12,7 +12,7 @@ class BarangAPIController extends Controller
     {
         $barang = Barang::all();
         return response()->json([
-            'message'=>'Data berhasil mengambil data prodi',
+            'message'=>'Data berhasil mengambil data barang',
             'status'=>'sukses',
             'data'=>$barang],200);
     }

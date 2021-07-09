@@ -13,8 +13,11 @@ class CreateDetailBarangTable extends Migration
      */
     public function up()
     {
-        Schema::create('detail_barang', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('detail_pembelian', function (Blueprint $table) {
+            $table->integer('id')->autoIncrement();
+            $table->int('pembelian_id');
+            $table->int('barang_id');
+            $table->int('supplier_id');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateDetailBarangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_barang');
+        Schema::dropIfExists('detail_pembelian');
     }
 }
