@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/tes', function () {
+    return 'sdsd';
+});
+
 Route::resource('barang','BarangController');
 Route::resource('pelanggan','pelangganController');
 Route::resource('supplier','supplierController');
