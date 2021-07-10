@@ -15,13 +15,13 @@ class CreatePelangganTable extends Migration
     {
         Schema::create('pelanggan', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->varchar('nama');
-            $table->varchar('no_hp');
-            $table->varchar('email');
-            $table->varchar('alamat');
-            $table->varchar('user_name');
-            $table->varchar('password');
-            $table->varchar('konfirmasi_password');
+            $table->string('nama');
+            $table->string('no_hp');
+            $table->string('email');
+            $table->string('alamat');
+            $table->string('user_name');
+            $table->string('password');
+            $table->string('konfirmasi_password');
             $table->timestamps();
         });
     }

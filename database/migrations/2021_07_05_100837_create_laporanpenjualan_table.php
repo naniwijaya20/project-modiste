@@ -15,7 +15,7 @@ class CreateLaporanpenjualanTable extends Migration
     {
         Schema::create('laporanpenjualan', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->varchar('bulanan');
+            $table->string('bulanan');
             $table->timestamps();
         });
     }

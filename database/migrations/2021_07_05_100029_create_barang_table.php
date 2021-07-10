@@ -15,13 +15,13 @@ class CreateBarangTable extends Migration
     {
         Schema::create('barang', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->varchar('nama_barang');
-            $table->varchar('ukuran');
-            $table->varchar('warna');
-            $table->int('harga_agen');
-            $table->int('harga');
-            $table->int('stok_barang');
-            $table->varchar('foto');
+            $table->string('nama_barang');
+            $table->string('ukuran');
+            $table->string('warna');
+            $table->integer('harga_agen');
+            $table->integer('harga');
+            $table->integer('stok_barang');
+            $table->string('foto');
             $table->timestamps();
         });
     }
