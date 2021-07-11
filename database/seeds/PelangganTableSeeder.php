@@ -26,7 +26,7 @@ class PelangganTableSeeder extends Seeder
         $pelanggan1->nama = 'Kurnia';
         $pelanggan1->no_hp = '08123456798';
         $pelanggan1->email = 'Kur@gmail.com';
-        $pelanggan1->alamat = 'Jl.kematian';
+        $pelanggan1->alamat = 'Jl.masadepan';
         $pelanggan1->user_name = 'Kurnia';
         $pelanggan1->password = '87654321';
         $pelanggan1->konfirmasi_password = '87654321';

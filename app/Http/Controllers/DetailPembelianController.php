@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\DetailBarang;
+use App\DetailPembelian;
 use Illuminate\Http\Request;
 
-class DetailBarangController extends Controller
+class DetailPembelianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class DetailBarangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\DetailBarang  $detailBarang
+     * @param  \App\DetailPembelian  $detailPembelian
      * @return \Illuminate\Http\Response
      */
-    public function show(DetailBarang $detailBarang)
+    public function show(DetailPembelian $detailPembelian)
     {
         //
     }
@@ -52,10 +52,10 @@ class DetailBarangController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\DetailBarang  $detailBarang
+     * @param  \App\DetailPembelian  $detailPembelian
      * @return \Illuminate\Http\Response
      */
-    public function edit(DetailBarang $detailBarang)
+    public function edit(DetailPembelian $detailPembelian)
     {
         //
     }
@@ -64,10 +64,10 @@ class DetailBarangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\DetailBarang  $detailBarang
+     * @param  \App\DetailPembelian  $detailPembelian
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DetailBarang $detailBarang)
+    public function update(Request $request, DetailPembelian $detailPembelian)
     {
         //
     }
@@ -75,10 +75,10 @@ class DetailBarangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\DetailBarang  $detailBarang
+     * @param  \App\DetailPembelian  $detailPembelian
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DetailBarang $detailBarang)
+    public function destroy(DetailPembelian $detailPembelian)
     {
         //
     }

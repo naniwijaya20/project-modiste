@@ -39,7 +39,9 @@ class pelangganController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Pelanggan::create($request->all());
+        return redirect()->route('pelanggan.index')
+        ->with('success','Pelanggan created successfully.');
     }
 
     /**
@@ -50,6 +52,8 @@ class pelangganController extends Controller
      */
     public function show($id)
     {
+        $pelangganShow = Pelanggan::where('id', $id)->get();
+        return view('pelanggan/show-pelanggan', compact('pelangganShow'));
         //
     }
 
@@ -61,6 +65,8 @@ class pelangganController extends Controller
      */
     public function edit($id)
     {
+        $pelangganEdit = Pelanggan::where('id',$id)->get();
+        return view('pelanggan/edit-pelanggan', compact('pelangganEdit'));
         //
     }
 
@@ -73,6 +79,16 @@ class pelangganController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $pelanggan = Barang::find($id);
+        $pelanggan->nama = $request->nama;
+        $pelanggan->no_hp = $request->no_hp;
+        $pelanggan->email = $request->email;
+        $pelanggan->alamat = $request->alamat;
+        $pelanggan->user_name = $request->user_name;
+        $pelanggan->password = $request->password;
+        $pelanggan-> konfirmasi_password= $request->konfirmasi_password;
+        $pelanggan->save();
+        return redirect()->route('pelanggan.index');
         //
     }
 
@@ -84,6 +100,8 @@ class pelangganController extends Controller
      */
     public function destroy($id)
     {
+        Pelanggan::where('id',$id)->delete();
+        return redirect()->route('pelanggan.index');
         //
     }
 }
