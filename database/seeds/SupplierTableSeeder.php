@@ -13,7 +13,7 @@ class SupplierTableSeeder extends Seeder
     public function run()
     {
         $supplier = new Supplier();
-        $supplier->nama_agen = 'Suksesshop';
+        $supplier->nama_agen = 'Sukses Shop';
         $supplier->alamat = 'Jl.kemerdekaan ';
         $supplier->save();
 

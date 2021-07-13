@@ -26,7 +26,7 @@ class pelangganController extends Controller
      */
     public function create()
     {
-        return view('pelanggan.create-barang');
+        return view('pelanggan.create-pelanggan');
 
         //
     }
@@ -79,7 +79,7 @@ class pelangganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pelanggan = Barang::find($id);
+        $pelanggan = Pelanggan::find($id);
         $pelanggan->nama = $request->nama;
         $pelanggan->no_hp = $request->no_hp;
         $pelanggan->email = $request->email;

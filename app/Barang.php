@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Controllers\pembelianController;
 use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
@@ -12,4 +13,13 @@ class Barang extends Model
     protected $fillable = [
         'nama_barang', 'ukuran', 'warna','harga', 'harga_agen', 'stok_barang', 'foto'
     ];
+
+    // public function pembelian()
+    // {
+    //     return $this->belongsToMany('App\Pembelian');
+    // }
+    public function detailPembelian()
+    {
+        return $this->hasMany('App\DetailPembelian');
+    }
 }

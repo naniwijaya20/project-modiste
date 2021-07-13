@@ -535,6 +535,7 @@
   <!-- main JS
 		============================================ -->
   <script src="{{ asset('js/main.js') }}"></script>
+  @stack('addData')
 </body>
 
 </html>

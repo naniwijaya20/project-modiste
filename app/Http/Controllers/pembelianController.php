@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Supplier;
 use App\Barang;
+use App\Pembelian;
+
+use App\DetailPembelian;
+use PhpParser\Builder\Function_;
+use PhpParser\Node\Expr\FuncCall;
 
 class pembelianController extends Controller
 {
@@ -14,9 +20,20 @@ class pembelianController extends Controller
      */
     public function index()
     {
-        $barang=Pembelian::all();
-        return view('pembelian.index',compact('pembelian'));
+        $suppliers=Supplier::all();
+        return view('pembelian.pilihan-supplier',compact('suppliers'));
         //
+    }
+
+    
+    public function detailTransaksi($id){
+        $detailPembelians = DetailPembelian::where('pembelian_id', $id)->get();
+        $noTrans = $id;
+        foreach($detailPembelians as $supp){
+            $sup = $supp->suppliers->nama_agen;
+        }
+        
+        return view('pembelian.detail-transaksi', compact('detailPembelians', 'noTrans','sup'));
     }
 
     /**
@@ -37,6 +54,40 @@ class pembelianController extends Controller
      */
     public function store(Request $request)
     {
+        $total = 0;
+        $totalsemua = 0;
+
+        //Memasukan data ke tabel pembelian
+        $pembelian = new Pembelian();
+        $pembelian->tanggal = $request->tanggal;
+        $pembelian->total = 0;
+        $pembelian->save();
+        $lastPembelian = Pembelian::orderBy('id', 'desc')->first();
+
+        //Memasukan data-data ke tabel detail pembelian
+        foreach($request->namaBarang as $key=>$namaBar){
+            $data = new DetailPembelian();
+            $data->pembelian_id = $lastPembelian->id;
+            $data->barang_id = $namaBar;
+            $data->supplier_id = $request->supplier;
+            $data->jumlah = $request->jumlahBarang[$key];
+
+            $barang = Barang::where('id', $namaBar)->first();
+
+            $total = $request->jumlahBarang[$key] * $barang->harga_agen;
+            $totalsemua = $totalsemua + $total;
+            $data->save();
+
+            //Tambah stok barang
+            $barang->stok_barang = $barang->stok_barang + $data->jumlah;
+            $barang->save();
+
+        }
+        
+        $pembelian->total = $totalsemua;
+        $pembelian->save();
+
+        return redirect()->route('pembelian.detail-transaksi', $lastPembelian->id)->with('message', 'Transaksi berhasil');
     }
 
     /**
@@ -47,6 +98,9 @@ class pembelianController extends Controller
      */
     public function show($id)
     {
+        $supplier=Supplier::find($id);
+        $barangs=Barang::all();
+        return view('pembelian.index',compact('supplier','barangs'));
         //
     }
 

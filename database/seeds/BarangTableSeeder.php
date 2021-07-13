@@ -28,8 +28,8 @@ class BarangTableSeeder extends Seeder
         $barang1->warna = 'Pink';
         $barang1->harga_agen = 25000;
         $barang1->harga = 30000;
-        $barang1->stok_barang = 200;
-        $barang1->foto = 'aa.jpeg';
+        $barang1->stok_barang = 10;
+        $barang1->foto = 'aa.JPG';
         $barang1->save();
 
         $barang2 = new Barang();
@@ -38,8 +38,8 @@ class BarangTableSeeder extends Seeder
         $barang2->warna = 'Hitam';
         $barang2->harga_agen = 5000;
         $barang2->harga = 10000;
-        $barang2->stok_barang = 50;
-        $barang2->foto = 'bb.jpeg';
+        $barang2->stok_barang = 10;
+        $barang2->foto = 'bb.jpg';
         $barang2->save();
 
         $barang3 = new Barang();
@@ -49,7 +49,7 @@ class BarangTableSeeder extends Seeder
         $barang3->harga_agen = 250000;
         $barang3->harga = 300000;
         $barang3->stok_barang = 10;
-        $barang3->foto = 'cc.jpeg';
+        $barang3->foto = 'cc.jpg';
         $barang3->save();
         
     }

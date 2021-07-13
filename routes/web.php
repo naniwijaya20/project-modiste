@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -11,16 +12,16 @@
 |
 */
 
+use App\Http\Controllers\pembelianController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/tes', function () {
-    return 'sdsd';
-});
+Route::get('detail-transaksi/{id}', [pembelianController::class, 'detailTransaksi'])->name('pembelian.detail-transaksi');
 
 Route::resource('barang','BarangController');
 Route::resource('pelanggan','pelangganController');
 Route::resource('supplier','supplierController');
 Route::resource('pembelian','pembelianController');
+
