@@ -25,3 +25,7 @@ Route::resource('pelanggan','pelangganController');
 Route::resource('supplier','supplierController');
 Route::resource('pembelian','pembelianController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
