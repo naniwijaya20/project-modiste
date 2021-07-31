@@ -286,8 +286,12 @@
                             <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
                             </li>
                         </li>
-                        <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span>
-                            Log Out</a>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><span class="icon nalika-unlocked author-log-ic"></span>
+                            {{ __('Logout') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                         </li>
                       </ul>
                       </li>
