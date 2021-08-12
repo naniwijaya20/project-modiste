@@ -14,6 +14,8 @@ class LaporanPembelianController extends Controller
      */
     public function index()
     {
+        $laporanPembelian=LaporanPembelian::all();
+        return view('laporanpembelian.index',compact('laporanPembelian'));
         //
     }
 
@@ -24,6 +26,7 @@ class LaporanPembelianController extends Controller
      */
     public function create()
     {
+        return view('laporanpembelian.create-laporanpembelian');
         //
     }
 
@@ -35,6 +38,9 @@ class LaporanPembelianController extends Controller
      */
     public function store(Request $request)
     {
+        LaporanPembelian::create($request->all());
+        return redirect()->route('laporanpembelian.index')
+        ->with('success','LaporanPembelian created successfully.');
         //
     }
 

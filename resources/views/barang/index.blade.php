@@ -27,9 +27,13 @@
                             <th>Gambar barang</th>
                             <th>Action</th>
                         </tr>
+                        <?php $no = 1 ;
+                        $total = 0;
+                        $totalSemua = 0;
+                        ?>
                         @foreach($barang as $item)
                         <tr>
-                            <td>1</td>
+                            <td>{{ $no++ }}</td>
                             <td>{{$item->nama_barang}}</td>
                             <td>{{$item->harga}}</td>
                             <td>{{$item->harga_agen}}</td>

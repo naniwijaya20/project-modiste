@@ -1,12 +1,24 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content') 
+<div class="container">
+<div class="Textweight">
+<div class="row justify-content-center">
+<div class="text">{{ __('BUTIK MODISTE SHOFI SAMARINDA') }}</div>
+
+<div class="container">
+<div class="resizeImage|max:2048">   
+<div class="form-group row">
+<img class="rounded mx-auto d-block" src="\img\logo\logo Ms.png" alt="logo">
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
+                
+                <div class="container">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

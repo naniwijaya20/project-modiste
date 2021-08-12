@@ -86,17 +86,15 @@
           <ul class="metismenu" id="menu1">
 
             <li>
-              <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data
-                  Tables</span></a>
+              <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
               <ul class="submenu-angle" aria-expanded="false">
                 <li><a title="Data Table" href="/barang"><span class="mini-sub-pro">Barang</span></a>
                 </li>
                 <li><a title="Data Table" href="/pelanggan"><span class="mini-sub-pro">Pelanggan</span></a></li>
                 <li><a title="Data Table" href="/supplier"><span class="mini-sub-pro">Supplier</span></a></li>
                 <li><a title="Data Table" href="/pembelian"><span class="mini-sub-pro">Pembelian</span></a></li>
-                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Laporan Penjualan Bulanan</span></a></li>
-                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Laporan
-                      Pembelian Bulanan</span></a></li>
+                <li><a title="Data Table" href="/laporanpenjualan"><span class="mini-sub-pro">Laporan Penjualan Bulanan</span></a></li>
+                <li><a title="Data Table" href="/laporanpembelian"><span class="mini-sub-pro">Laporan pembelian Bulanan</span></a></li>
               </ul>
             </li>
           </ul>
@@ -314,7 +312,7 @@
                   <ul class="mobile-menu-nav">
                     <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                       <ul class="collapse dropdown-header-top">
-                        <li><a href="index.html">Dashboard v.1</a></li>
+                        <li><a href="index.html">Dashboard v.</a></li>
                         <li><a href="index-1.html">Dashboard v.2</a></li>
                         <li><a href="index-3.html">Dashboard v.3</a></li>
                         <li><a href="product-list.html">Product List</a></li>
@@ -483,8 +481,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="footer-copy-right">
-              <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights
-                reserved.</p>
+              <p>BUTIK<a href="https://colorlib.com/wp/templates/">MODISTE SHOFI</a>SAMARINDA</p>
             </div>
           </div>
         </div>

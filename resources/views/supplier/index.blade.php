@@ -16,9 +16,13 @@
                             <th>Alamat</th>
                             <th>Action</th>
                         </tr>
+                        <?php $no = 1 ;
+                        $total = 0;
+                        $totalSemua = 0;
+                        ?>
                         @foreach($supplier as $item)
                         <tr>
-                            <td>1</td>
+                            <td>{{ $no++ }}</td>
                             <td>{{$item->nama_agen}}</td>
                             <td>{{$item->alamat}}</td>
                             <td>

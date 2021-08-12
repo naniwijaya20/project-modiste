@@ -13,13 +13,33 @@ class SupplierTableSeeder extends Seeder
     public function run()
     {
         $supplier = new Supplier();
-        $supplier->nama_agen = 'Sukses Shop';
-        $supplier->alamat = 'Jl.kemerdekaan ';
+        $supplier->nama_agen = 'Toko Unggul Jaya';
+        $supplier->alamat = 'Jl Ps Bong No.6, Bongkaran, Kec. Pabean Cantian, Kota SBY, Jawa Timur 60161 ';
         $supplier->save();
 
         $supplier1= new Supplier();
-        $supplier1->nama_agen = 'Rezeki Bersama';
-        $supplier1->alamat = 'Jl.Sei Kledang ';
+        $supplier1->nama_agen = 'Toko Hj.Eti';
+        $supplier1->alamat = ' Blok telaga No.RT05/03, Kalianyar, Krangkeng, Kabupaten Indramayu, Jawa Barat 45284 ';
+        $supplier1->save();
+
+        $supplier1= new Supplier();
+        $supplier1->nama_agen = 'Toko Vidia';
+        $supplier1->alamat = ' Wedi Kidul, Wedi, Kec. Kapas, Kabupaten Bojonegoro, Jawa Timur 62181';
+        $supplier1->save();
+
+        $supplier1= new Supplier();
+        $supplier1->nama_agen = 'Toko Murip Harjo';
+        $supplier1->alamat = '-';
+        $supplier1->save();
+
+        $supplier1= new Supplier();
+        $supplier1->nama_agen = 'Toko sisi';
+        $supplier1->alamat = '-';
+        $supplier1->save();
+
+        $supplier1= new Supplier();
+        $supplier1->nama_agen = 'Toko Sri';
+        $supplier1->alamat = '-';
         $supplier1->save();
         //
     }

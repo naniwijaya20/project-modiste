@@ -17,11 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('supplier', 'API\SupplierAPIController');
 Route::resource('barang', 'API\BarangAPIController');
 Route::resource('penjualan', 'API\PenjualanAPIController');
 Route::resource('detailpenjualan', 'API\DetailPenjualanController');
 Route::resource('keranjangpembelian', 'API\KeranjangPembelianAPIController');
+// Route::resource('keranjanpembelian', 'API');
+
 
 
 

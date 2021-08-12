@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\LaporanPenjualan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class LaporanPenjualanController extends Controller
@@ -14,6 +15,8 @@ class LaporanPenjualanController extends Controller
      */
     public function index()
     {
+        $laporanPenjualan=LaporanPenjualan::all();
+        return view('laporanpenjualan.index',compact('laporanPenjualan'));
         //
     }
 
@@ -24,7 +27,7 @@ class LaporanPenjualanController extends Controller
      */
     public function create()
     {
-        //
+        return view('laporanpenjualan.create-laporanpenjualan');
     }
 
     /**
@@ -35,7 +38,9 @@ class LaporanPenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        LaporanPenjualan::create($request->all());
+        return redirect()->route('laporanpenjualan.index')
+        ->with('success','LaporanPenjualan created successfully.');
     }
 
     /**

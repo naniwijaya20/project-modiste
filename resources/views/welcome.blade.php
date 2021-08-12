@@ -11,7 +11,8 @@
 
         <!-- Styles -->
         <style>
-            html, body {
+            html, body {\
+
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
@@ -80,8 +81,9 @@
             @endif
 
             <div class="content">
+                <img src="/img\logo/logo Ms.png" alt="logo">
                 <div class="title m-b-md">
-                    MODISTE SHOFI
+                   Butik Modiste Shofi Samarinda
                 </div>
             </div>
         </div>
