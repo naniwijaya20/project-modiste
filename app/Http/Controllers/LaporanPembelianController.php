@@ -2,90 +2,101 @@
 
 namespace App\Http\Controllers;
 
-use App\LaporanPembelian;
 use Illuminate\Http\Request;
+use App\Pembelian;
+use DB;
 
 class LaporanPembelianController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $laporanPembelian=LaporanPembelian::all();
-        return view('laporanpembelian.index',compact('laporanPembelian'));
-        //
+    public function index(){
+    	$title = 'Laporan Pembelian (Default Hari ini)';
+        $data = Pembelian::whereDay('tanggal',date('d'))->orderBy('tanggal')->get();
+
+        $tanggal = array();
+        $nilai = array();
+        foreach ($data as $dt) {
+            array_push($tanggal, date('Y-m-d',strtotime($dt->created_at)));
+            $hitung = Pembelian::where('tanggal',$dt->created_at)->count();
+            array_push($nilai, $hitung);
+        }
+        $tanggal = json_encode($tanggal);
+        $nilai = json_encode($nilai);
+
+        $dari = date('Y-m-d');
+        $sampai = date('Y-m-d');
+
+        $all = Pembelian::all();
+    	return view('laporanpembelian.index',compact('title','data','tanggal','nilai','dari','sampai', 'all'));
+  //  dd($all);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('laporanpembelian.create-laporanpembelian');
-        //
+    public function tanggal(Request $request){
+    	$tanggal1 = date('Y-m-d',strtotime($request->tanggal1));
+    	$tanggal2 = date('Y-m-d',strtotime($request->tanggal2));
+
+
+    	$title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
+    	$data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])
+                ->orderBy('created_at')->get();
+
+        $all = Pembelian::all();
+
+        $tanggal = array();
+        foreach ($data as $dt) {
+            array_push($tanggal, $dt->created_at);
+        }
+        $tanggal = json_encode($tanggal);
+
+        $dari = $tanggal1;
+        $sampai = $tanggal2;
+
+    	return view('laporanpembelian.index',compact('title','data','tanggal','dari','sampai','all'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        LaporanPembelian::create($request->all());
-        return redirect()->route('laporanpembelian.index')
-        ->with('success','LaporanPembelian created successfully.');
-        //
+    public function tanggal1(Request $request){
+        $tanggal1 = date('Y-m-d',strtotime($request->tanggal1));
+        $tanggal2 = date('Y-m-d',strtotime($request->tanggal2));
+
+        $title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
+        $data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])
+                ->orderBy('created_at')->get();
+
+        $tanggal = array();
+        foreach ($data as $dt) {
+            array_push($tanggal, $dt->created_at);
+        }
+        $tanggal = json_encode($tanggal);
+
+        $dari = $tanggal1;
+        $sampai = $tanggal2;
+        
+
+        return view('laporanpembelian.index',compact('title','data','tanggal','dari','sampai'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\LaporanPembelian  $laporanPembelian
-     * @return \Illuminate\Http\Response
-     */
-    public function show(LaporanPembelian $laporanPembelian)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\LaporanPembelian  $laporanPembelian
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(LaporanPembelian $laporanPembelian)
+    public function pdf(Request $request)
     {
-        //
-    }
+        $tanggal1 = date('Y-m-d',strtotime($request->tanggal1));
+        $tanggal2 = date('Y-m-d',strtotime($request->tanggal2));
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\LaporanPembelian  $laporanPembelian
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, LaporanPembelian $laporanPembelian)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\LaporanPembelian  $laporanPembelian
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(LaporanPembelian $laporanPembelian)
-    {
-        //
+        $title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
+        $data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])
+                ->orderBy('created_at')->get();
+
+        $tanggal = array();
+        foreach ($data as $dt) {
+            array_push($tanggal, $dt->created_at);
+        }
+        $tanggal = json_encode($tanggal);
+
+        $dari = $tanggal1;
+        $sampai = $tanggal2;     
+
+        $pdf = PDF::loadView('laporanpembelian.note',compact('title','data','tanggal','dari','sampai','tanggal1','tanggal2'))->setPaper([0,0,500,402],'landscape');
+        return $pdf->stream('Laporan Pembelian.pdf');
+
     }
 }
+

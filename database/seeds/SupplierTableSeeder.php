@@ -26,21 +26,5 @@ class SupplierTableSeeder extends Seeder
         $supplier1->nama_agen = 'Toko Vidia';
         $supplier1->alamat = ' Wedi Kidul, Wedi, Kec. Kapas, Kabupaten Bojonegoro, Jawa Timur 62181';
         $supplier1->save();
-
-        $supplier1= new Supplier();
-        $supplier1->nama_agen = 'Toko Murip Harjo';
-        $supplier1->alamat = '-';
-        $supplier1->save();
-
-        $supplier1= new Supplier();
-        $supplier1->nama_agen = 'Toko sisi';
-        $supplier1->alamat = '-';
-        $supplier1->save();
-
-        $supplier1= new Supplier();
-        $supplier1->nama_agen = 'Toko Sri';
-        $supplier1->alamat = '-';
-        $supplier1->save();
-        //
     }
 }

@@ -28,9 +28,9 @@ Route::resource('pembelian','pembelianController');
 Route::resource('laporanpenjualan','LaporanPenjualanController');
 Route::resource('laporanpembelian','LaporanPembelianController');
 
-Route::get('laporan','Laporan1Controller@index');
-Route::get('laporan-tanggal','Laporan1Controller@tanggal');
-Route::get('laporan1','Laporan1Controller@pdf');
+Route::get('laporan','LaporanPembelianController@index');
+Route::get('laporan-tanggal','LaporanPembelianController@tanggal');
+// Route::get('laporan','LaporanPembelianController@pdf');
 Route::get('chart');
 
 

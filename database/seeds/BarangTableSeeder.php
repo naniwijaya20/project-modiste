@@ -132,7 +132,158 @@ class BarangTableSeeder extends Seeder
         $barang3->stok_barang = 2;
         $barang3->foto = '7.jpeg';
         $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '301*220 CM';
+        $barang3->warna = 'Biru';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 5;
+        $barang3->foto = 'batik_biru.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '301*220 CM';
+        $barang3->warna = 'Hijau';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 9;
+        $barang3->foto = 'batik_hijau.jpg';
+        $barang3->save();
+
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '301*220 CM';
+        $barang3->warna = 'Kuning';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 6;
+        $barang3->foto = 'batik_kuning.jpg';
+        $barang3->save();
         
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '301*220 CM';
+        $barang3->warna = 'Merah';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 8;
+        $barang3->foto = 'batik_merah.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '301*220 CM';
+        $barang3->warna = 'Tosca';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 10;
+        $barang3->foto = 'batik_tosca.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik H Santoso Hitam Manis';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Biru';
+        $barang3->harga_agen = 55000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 9;
+        $barang3->foto = 'Batik_bungaungu.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik H Santoso Hitam Manis';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Coklat';
+        $barang3->harga_agen = 55000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 8;
+        $barang3->foto = 'Batik_bungacoklat.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik H Santoso Hitam Manis';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Hijau';
+        $barang3->harga_agen = 55000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 7;
+        $barang3->foto = 'Batik_bungahijau.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik H Santoso Hitam Manis';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Merah';
+        $barang3->harga_agen = 55000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 6;
+        $barang3->foto = 'batik_bungamerah.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik H Santoso Hitam Manis';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Ungu';
+        $barang3->harga_agen = 55000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 5;
+        $barang3->foto = 'batik_bungaungu.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'hijau';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 4;
+        $barang3->foto = 'cibulan_hijau.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Kuning';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 7;
+        $barang3->foto = 'cibulan_kuning.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Merah';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 5;
+        $barang3->foto = 'cibulan_merah.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Tosca';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 4;
+        $barang3->foto = 'cibulan_tosca.jpg';
+        $barang3->save();
+
+        $barang3 = new Barang();
+        $barang3->nama_barang = 'Kain Batik Cibulan';
+        $barang3->ukuran = '220*115 CM';
+        $barang3->warna = 'Ungu';
+        $barang3->harga_agen = 60000;
+        $barang3->harga = 100000;
+        $barang3->stok_barang = 7;
+        $barang3->foto = 'cibulan_ungu.jpg';
+        $barang3->save();
+
     }
         //
     

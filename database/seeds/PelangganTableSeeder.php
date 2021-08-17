@@ -23,11 +23,11 @@ class PelangganTableSeeder extends Seeder
         $pelanggan->save();
 
         $pelanggan1 = new Pelanggan();
-        $pelanggan1->nama = 'Kurnia';
+        $pelanggan1->nama = 'Nia';
         $pelanggan1->no_hp = '08123456798';
-        $pelanggan1->email = 'Kur@gmail.com';
+        $pelanggan1->email = 'Nia@gmail.com';
         $pelanggan1->alamat = 'Jl.masadepan';
-        $pelanggan1->user_name = 'Kurnia';
+        $pelanggan1->user_name = 'Nia';
         $pelanggan1->password = '87654321';
         $pelanggan1->konfirmasi_password = '87654321';
         $pelanggan1->save();
