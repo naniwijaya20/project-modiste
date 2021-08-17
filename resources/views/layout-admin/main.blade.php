@@ -72,8 +72,8 @@
   <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
       <div class="sidebar-header">
-        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-        <strong><img src="img/logo/logosn.png" alt="" /></strong>
+      <div class="resizeImage|max:2048"> 
+        <a href="home"><img class="main-logo" src="img/logo/logo_bulat.png" alt="" width="100" height="100" style="margin-top"/></a>
       </div>
       <div class="nalika-profile">
         <div class="profile-dtl">
@@ -86,15 +86,16 @@
           <ul class="metismenu" id="menu1">
 
             <li>
-              <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+              <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data
+                  Tables</span></a>
               <ul class="submenu-angle" aria-expanded="false">
                 <li><a title="Data Table" href="/barang"><span class="mini-sub-pro">Barang</span></a>
                 </li>
                 <li><a title="Data Table" href="/pelanggan"><span class="mini-sub-pro">Pelanggan</span></a></li>
                 <li><a title="Data Table" href="/supplier"><span class="mini-sub-pro">Supplier</span></a></li>
                 <li><a title="Data Table" href="/pembelian"><span class="mini-sub-pro">Pembelian</span></a></li>
-                <li><a title="Data Table" href="/laporanpenjualan"><span class="mini-sub-pro">Laporan Penjualan Bulanan</span></a></li>
-                <li><a title="Data Table" href="/laporanpembelian"><span class="mini-sub-pro">Laporan pembelian Bulanan</span></a></li>
+                <li><a title="Data Table" href="laporan"><span class="mini-sub-pro">Laporan Penjualan Bulanan</span></a></li>
+                <li><a title="Data Table" href="/laporan"><span class="mini-sub-pro">Laporan Pembelian Bulanan</span></a></li>
               </ul>
             </li>
           </ul>
@@ -284,7 +285,9 @@
                             <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
                             </li>
                         </li>
-                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <!-- <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span>
+                            Log Out</a> -->
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><span class="icon nalika-unlocked author-log-ic"></span>
                             {{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -303,6 +306,7 @@
         </div>
       </div>
       <!-- Mobile Menu start -->
+    
       <div class="mobile-menu-area">
         <div class="container">
           <div class="row">
@@ -312,7 +316,7 @@
                   <ul class="mobile-menu-nav">
                     <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                       <ul class="collapse dropdown-header-top">
-                        <li><a href="index.html">Dashboard v.</a></li>
+                        <li><a href="index.html">Dashboard v.1</a></li>
                         <li><a href="index-1.html">Dashboard v.2</a></li>
                         <li><a href="index-3.html">Dashboard v.3</a></li>
                         <li><a href="product-list.html">Product List</a></li>
@@ -365,7 +369,6 @@
                         </li>
                         <li><a href="images-cropper.html">Images Cropper</a>
                         </li>
-                      </ul>
                     </li>
                     <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
                       <ul id="Chartsmob" class="collapse dropdown-header-top">
@@ -446,6 +449,7 @@
         </div>
       </div>
       <!-- Mobile Menu end -->
+     
       <div class="breadcome-area">
         <div class="container-fluid">
           <div class="row">
@@ -461,8 +465,10 @@
                         <h2>BUTIK MODISTE SHOFI</h2>
                         <p>Welcome My Butik <span class="bread-ntd"></span></p>
                       </div>
+                      
                     </div>
                   </div>
+                  
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="breadcomb-report">
                       <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="icon nalika-download"></i></button>
@@ -473,15 +479,27 @@
             </div>
           </div>
         </div>
+        
       </div>
-    </div>
+      </div>
+    
+    
     @yield('tabel')
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    
     <div class="footer-copyright-area">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
             <div class="footer-copy-right">
-              <p>BUTIK<a href="https://colorlib.com/wp/templates/">MODISTE SHOFI</a>SAMARINDA</p>
+              <p>Copyright © 2021 <a href="https://colorlib.com/wp/templates/">Project</a> Butik Modiste 2021</p>
             </div>
           </div>
         </div>
