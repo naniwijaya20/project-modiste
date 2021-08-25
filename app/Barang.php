@@ -22,4 +22,8 @@ class Barang extends Model
     {
         return $this->hasMany('App\DetailPembelian');
     }
+    public function detailPenjualan()
+    {
+        return $this->hasMany('App\DetailPenjualan');
+    }
 }

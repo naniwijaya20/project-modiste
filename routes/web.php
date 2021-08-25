@@ -25,15 +25,26 @@ Route::resource('barang','BarangController');
 Route::resource('pelanggan','pelangganController');
 Route::resource('supplier','supplierController');
 Route::resource('pembelian','pembelianController');
-Route::resource('laporanpenjualan','LaporanPenjualanController');
-Route::resource('laporanpembelian','LaporanPembelianController');
+Route::resource('penjualan','PenjualanController');
+Route::resource('detailpenjualan','DetailPenjualanConroller');
 
-Route::get('laporan','LaporanPembelianController@index');
-Route::get('laporan-tanggal','LaporanPembelianController@tanggal');
-// Route::get('laporan','LaporanPembelianController@pdf');
+Route::resource('laporanpenjualan','LaporanPenjualanController');
+Route::get('laporanpenjualan','LaporanPenjualanController@index');
+Route::get('laporanpenjualan-tanggal','LaporanPenjualanController@tanggal');
+// Route::get('laporanpenjualan','LaporanPembelianController@pdf');
+
+Route::resource('laporanpembelian','LaporanPembelianController');
+Route::get('laporanpembelian','LaporanPembelianController@index');
+Route::get('laporanpembelian-tanggal','LaporanPembelianController@tanggal');
+// Route::get('laporanpembelian','LaporanPembelianController@pdf');
+
+
 Route::get('chart');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/detailpenjualan', 'DetailPenjualanConroller@indexPemberitahuan')->name('pemberitahuan');
+

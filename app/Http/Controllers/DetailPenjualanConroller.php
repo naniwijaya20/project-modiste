@@ -44,8 +44,13 @@ class DetailPenjualanConroller extends Controller
      * @param  \App\DetailPenjualan  $detailPenjualan
      * @return \Illuminate\Http\Response
      */
-    public function show(DetailPenjualan $detailPenjualan)
+    public function show($id)
     {
+        // $dp=DetailPenjualan::find($id);
+        // return view('detailpenjualan.index',compact('dp'));
+        $dp=DetailPenjualan::where('penjualan_id', $id)->get();
+        return view('detailpenjualan.index',compact('dp'));
+        
         //
     }
 

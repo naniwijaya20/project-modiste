@@ -25,6 +25,8 @@ class LaporanPembelianController extends Controller
         $dari = date('Y-m-d');
         $sampai = date('Y-m-d');
 
+        //dd($dari);
+
         $all = Pembelian::all();
     	return view('laporanpembelian.index',compact('title','data','tanggal','nilai','dari','sampai', 'all'));
   //  dd($all);
@@ -33,7 +35,6 @@ class LaporanPembelianController extends Controller
     public function tanggal(Request $request){
     	$tanggal1 = date('Y-m-d',strtotime($request->tanggal1));
     	$tanggal2 = date('Y-m-d',strtotime($request->tanggal2));
-
 
     	$title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
     	$data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])
@@ -80,7 +81,6 @@ class LaporanPembelianController extends Controller
         $tanggal1 = date('Y-m-d',strtotime($request->tanggal1));
         $tanggal2 = date('Y-m-d',strtotime($request->tanggal2));
 
-
         $title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
         $data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])
                 ->orderBy('created_at')->get();
@@ -94,8 +94,8 @@ class LaporanPembelianController extends Controller
         $dari = $tanggal1;
         $sampai = $tanggal2;     
 
-        $pdf = PDF::loadView('laporanpembelian.note',compact('title','data','tanggal','dari','sampai','tanggal1','tanggal2'))->setPaper([0,0,500,402],'landscape');
-        return $pdf->stream('Laporan Pembelian.pdf');
+        // $pdf = PDF::loadView('laporanpembelian.note',compact('title','data','tanggal','dari','sampai','tanggal1','tanggal2'))->setPaper([0,0,500,402],'landscape');
+        // return $pdf->stream('Laporan Pembelian.pdf');
 
     }
 }

@@ -94,8 +94,8 @@
                 <li><a title="Data Table" href="/pelanggan"><span class="mini-sub-pro">Pelanggan</span></a></li>
                 <li><a title="Data Table" href="/supplier"><span class="mini-sub-pro">Supplier</span></a></li>
                 <li><a title="Data Table" href="/pembelian"><span class="mini-sub-pro">Pembelian</span></a></li>
-                <li><a title="Data Table" href="laporan"><span class="mini-sub-pro">Laporan Penjualan Bulanan</span></a></li>
-                <li><a title="Data Table" href="/laporan"><span class="mini-sub-pro">Laporan Pembelian Bulanan</span></a></li>
+                <li><a title="Data Table" href="laporanpenjualan"><span class="mini-sub-pro">Laporan Penjualan</span></a></li>
+                <li><a title="Data Table" href="/laporanpembelian"><span class="mini-sub-pro">Laporan Pembelian</span></a></li>
               </ul>
             </li>
           </ul>
@@ -210,61 +210,16 @@
                         </li> -->
 
                         <!-- PEMBERITAHUAN -->
-                        <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-alarm" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-alarm" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                           <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                             <div class="notification-single-top">
                               <h1>Notifications</h1>
                             </div>
                             <ul class="notification-menu">
-                              <li>
-                                <a href="#">
-                                  <div class="notification-icon">
-                                    <i class="icon nalika-tick" aria-hidden="true"></i>
-                                  </div>
+                             <li>
                                   <div class="notification-content">
-                                    <span class="notification-date">16 Sept</span>
-                                    <h2>Advanda Cro</h2>
-                                    <p>Please done this project as soon possible.
-                                    </p>
-                                  </div>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  <div class="notification-icon">
-                                    <i class="icon nalika-cloud" aria-hidden="true"></i>
-                                  </div>
-                                  <div class="notification-content">
-                                    <span class="notification-date">16 Sept</span>
-                                    <h2>Sulaiman din</h2>
-                                    <p>Please done this project as soon possible.
-                                    </p>
-                                  </div>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  <div class="notification-icon">
-                                    <i class="icon nalika-folder" aria-hidden="true"></i>
-                                  </div>
-                                  <div class="notification-content">
-                                    <span class="notification-date">16 Sept</span>
-                                    <h2>Victor Jara</h2>
-                                    <p>Please done this project as soon possible.
-                                    </p>
-                                  </div>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  <div class="notification-icon">
-                                    <i class="icon nalika-bar-chart" aria-hidden="true"></i>
-                                  </div>
-                                  <div class="notification-content">
-                                    <span class="notification-date">16 Sept</span>
-                                    <h2>Victor Jara</h2>
-                                    <p>Please done this project as soon possible.
-                                    </p>
+                                    <!-- <span class="notification-date">16 Sept</span> -->
+                                    
                                   </div>
                                 </a>
                               </li>
@@ -273,7 +228,7 @@
                               <a href="#">View All Notification</a>
                             </div>
                           </div>
-                        </li> -->
+                        </li>
                         
                         <li class="nav-item">
                           <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
@@ -285,7 +240,7 @@
                             <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
                             </li>
                         </li>
-                        <!-- <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span>
+                        <!-- <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span> -->
                             Log Out</a> -->
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><span class="icon nalika-unlocked author-log-ic"></span>

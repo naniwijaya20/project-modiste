@@ -12,10 +12,16 @@ class PenjualanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function indexPemberitahuan()
+    // {
+    //     $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+    //     return view('layout-admin.main',compact('penjualan'));
+    // }
+
     public function index()
     {
-        $barang=Penjualan::all();
-        return view('penjualan.index',compact('penjualan'));
+        // $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        // return view('layout-main.main',compact('penjualan'));
     }
 
     /**

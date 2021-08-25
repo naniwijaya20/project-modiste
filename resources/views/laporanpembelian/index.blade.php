@@ -6,17 +6,16 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="product-status-wrap">
-                    <form role="form" method="get" action="{{ url('laporan-tanggal') }}">
+                    <form role="form" method="get" action="{{ url('laporanpembelian-tanggal') }}">
                         <div class="box-body">
-
                             <div class="">
                                 <label for="exampleInputEmail1" style="color:white;">Dari Tanggal</label>
-                                <input type="date" value="{{ $dari }}" name="tanggal" class="form-control datepicker"  placeholder="Dari Tanggal">
+                                <input type="date" value="{{ $dari }}" name="tanggal1" class="form-control datepicker"  placeholder="Dari Tanggal">
                             </div>
 
                             <div style="margin-top: 20px;">
                                 <label for="exampleInputPassword1"  style="color:white;">Sampai Tanggal</label>
-                                <input type="date" value="{{ $sampai }}" name="tanggal" class="form-control datepicker" placeholder="Sampai Tanggal">
+                                <input type="date" value="{{ $sampai }}" name="tanggal2" class="form-control datepicker" placeholder="Sampai Tanggal">
                             </div>
                         </div>
                         <!-- /.box-body -->
@@ -24,7 +23,7 @@
                         <div class="box-footer" style="margin-top: 20px;">
                             <button type="submit" class="btn btn-primary" >Cek</button>
 
-                            <button type="submit" formaction="{{ url('laporan1') }}">Print</button>
+                            <!-- <button type="submit" formaction="{{ url('laporanpembelian') }}">Print</button> -->
                         </div>
                     </form>
                 </div>
@@ -43,7 +42,7 @@ $tottotal = 0;
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="product-status-wrap">
-                    <h4>Tabel Laporan</h4>
+                <h4>Tabel Laporan Pembelian</h4>
                     <table class="table table-bordered">
 					<thead>
 						<tr>
@@ -53,7 +52,7 @@ $tottotal = 0;
 						</tr>
 					</thead>
 					<tbody>
-							@foreach($all as $e=>$dt)
+							@foreach($data as $e=>$dt)
 								<?php $tottotal += $dt->retribusi; ?>
 								<tr>
 									<td>{{$e + 1 }}</td>
