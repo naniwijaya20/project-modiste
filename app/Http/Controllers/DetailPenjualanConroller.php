@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\DetailPenjualan;
+use App\Penjualan;
+
 use Illuminate\Http\Request;
 
 class DetailPenjualanConroller extends Controller
@@ -48,8 +50,10 @@ class DetailPenjualanConroller extends Controller
     {
         // $dp=DetailPenjualan::find($id);
         // return view('detailpenjualan.index',compact('dp'));
-        $dp=DetailPenjualan::where('penjualan_id', $id)->get();
-        return view('detailpenjualan.index',compact('dp'));
+        $dp=DetailPenjualan::where('penjualan_id', $id)->take(5);
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+
+        return view('detailpenjualan.index',compact('dp','penjualan'));
         
         //
     }

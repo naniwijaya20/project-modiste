@@ -3,6 +3,36 @@
 <div class="product-status mg-b-30">
   <div class="container-fluid">
     <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="product-status-wrap">
+          <h4>Tanggal Pembelian</h4>
+          <p style="color: white;"><?= date('d F Y') ?></p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="product-status-wrap">
+          <h4>Nama Pelanggan</h4>
+          <p style="color: white;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="product-status-wrap">
+          <h4>Alamat</h4>
+          <p style="color: white;"><?= date('d F Y') ?></p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="product-status-wrap">
+          <h4>No Telepon</h4>
+          <p style="color: white;"></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

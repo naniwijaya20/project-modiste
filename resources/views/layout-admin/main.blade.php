@@ -217,9 +217,13 @@
                             </div>
                             <ul class="notification-menu">
                              <li>
-                                  <div class="notification-content">
-                                    <!-- <span class="notification-date">16 Sept</span> -->
-                                    
+                                  <div class="notification-content" style="margin-left:10px">
+                                    @foreach($penjualan as $items)
+                                      <p>{{ $items->tanggal }}</p>
+                                      <p>No Trans : <a style="display:inline-block" href="detailpenjualan/{{$items->id}}"> {{ $items->id }}</a></p>
+                                      <hr>
+                                    @endforeach
+
                                   </div>
                                 </a>
                               </li>
