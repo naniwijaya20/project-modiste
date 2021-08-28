@@ -73,7 +73,9 @@
     <nav id="sidebar" class="">
       <div class="sidebar-header">
       <div class="resizeImage|max:2048"> 
-        <a href="home"><img class="main-logo" src="img/logo/logo_bulat.png" alt="" width="100" height="100" style="margin-top"/></a>
+        <br>
+        <a href="home"><img class="main-logo" src="{{ asset('img/logo/logo_bulat.png') }}" alt="" width="70" height="70" style="margin-top"/></a>
+        </br>
       </div>
       <div class="nalika-profile">
         <div class="profile-dtl">
@@ -89,13 +91,13 @@
               <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data
                   Tables</span></a>
               <ul class="submenu-angle" aria-expanded="false">
-                <li><a title="Data Table" href="/barang"><span class="mini-sub-pro">Barang</span></a>
+                <li style="text-align:left;"><a title="Data Table" href="/barang"><span class="mini-sub-pro">Barang</span></a>
                 </li>
-                <li><a title="Data Table" href="/pelanggan"><span class="mini-sub-pro">Pelanggan</span></a></li>
-                <li><a title="Data Table" href="/supplier"><span class="mini-sub-pro">Supplier</span></a></li>
-                <li><a title="Data Table" href="/pembelian"><span class="mini-sub-pro">Pembelian</span></a></li>
-                <li><a title="Data Table" href="laporanpenjualan"><span class="mini-sub-pro">Laporan Penjualan</span></a></li>
-                <li><a title="Data Table" href="/laporanpembelian"><span class="mini-sub-pro">Laporan Pembelian</span></a></li>
+                <li style="text-align:left;"><a title="Data Table" href="/pelanggan"><span class="mini-sub-pro">Pelanggan</span></a></li>
+                <li style="text-align:left;"><a title="Data Table" href="/supplier"><span class="mini-sub-pro">Supplier</span></a></li>
+                <li style="text-align:left;"><a title="Data Table" href="/pembelian"><span class="mini-sub-pro">Pembelian</span></a></li>
+                <li style="text-align:left;"><a title="Data Table" href="/laporanpenjualan"><span class="mini-sub-pro">Laporan Penjualan</span></a></li>
+                <li style="text-align:left;"><a title="Data Table" href="/laporanpembelian"><span class="mini-sub-pro">Laporan Pembelian</span></a></li>
               </ul>
             </li>
           </ul>
@@ -220,7 +222,7 @@
                                   <div class="notification-content" style="margin-left:10px">
                                     @foreach($penjualan as $items)
                                       <p>{{ $items->tanggal }}</p>
-                                      <p>No Trans : <a style="display:inline-block" href="detailpenjualan/{{$items->id}}"> {{ $items->id }}</a></p>
+                                      <p>No Trans : <a style="display:inline-block" href="{{ url('detailpenjualan/'.$items->id)}}"> {{ $items->id }}</a></p>
                                       <hr>
                                     @endforeach
 
@@ -423,6 +425,8 @@
                       <div class="breadcomb-ctn">
                         <h2>BUTIK MODISTE SHOFI</h2>
                         <p>Welcome My Butik <span class="bread-ntd"></span></p>
+                        <hr>
+                        <h1 style="color:white;">@yield('judul')</h1>
                       </div>
                       
                     </div>

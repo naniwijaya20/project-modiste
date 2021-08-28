@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pelanggan;
+use App\Penjualan;
 
 class pelangganController extends Controller
 {
@@ -15,7 +16,8 @@ class pelangganController extends Controller
     public function index()
     {
         $pelanggan=Pelanggan::all();
-        return view('pelanggan.index',compact('pelanggan'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('pelanggan.index',compact('pelanggan','penjualan'));
         //
     }
 
@@ -26,7 +28,8 @@ class pelangganController extends Controller
      */
     public function create()
     {
-        return view('pelanggan.create-pelanggan');
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('pelanggan.create-pelanggan', compact('penjualan'));
 
         //
     }
@@ -53,7 +56,8 @@ class pelangganController extends Controller
     public function show($id)
     {
         $pelangganShow = Pelanggan::where('id', $id)->get();
-        return view('pelanggan/show-pelanggan', compact('pelangganShow'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('pelanggan/show-pelanggan', compact('pelangganShow','penjualan'));
         //
     }
 
@@ -66,7 +70,8 @@ class pelangganController extends Controller
     public function edit($id)
     {
         $pelangganEdit = Pelanggan::where('id',$id)->get();
-        return view('pelanggan/edit-pelanggan', compact('pelangganEdit'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('pelanggan/edit-pelanggan', compact('pelangganEdit','penjualan'));
         //
     }
 

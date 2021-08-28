@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Barang;
+use App\Penjualan;
 
 class barangController extends Controller
 {
@@ -14,8 +15,9 @@ class barangController extends Controller
      */
     public function index()
     {
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
         $barang=Barang::all();
-        return view('barang.index',compact('barang'));
+        return view('barang.index',compact('barang','penjualan'));
         //
     }
 
@@ -26,7 +28,8 @@ class barangController extends Controller
      */
     public function create()
     {
-        return view('barang.create-barang');
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('barang.create-barang', compact('penjualan'));
         //
     }
 
@@ -84,8 +87,9 @@ class barangController extends Controller
     public function edit($id)
     {
         $barangEdit = Barang::where('id',$id)->get();
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
         // dd($barangEdit);
-        return view('barang/edit-barang', compact('barangEdit'));
+        return view('barang/edit-barang', compact('barangEdit','penjualan'));
         
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Supplier;
+use App\Penjualan;
 
 class SupplierController extends Controller
 {
@@ -15,7 +16,8 @@ class SupplierController extends Controller
     public function index()
     {
         $supplier=Supplier::all();
-        return view('supplier.index',compact('supplier'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('supplier.index',compact('supplier','penjualan'));
         //
     }
 
@@ -26,7 +28,8 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        return view('supplier.create-supplier');
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('supplier.create-supplier',compact('penjualan'));
         //
     }
 
@@ -65,8 +68,9 @@ class SupplierController extends Controller
     public function edit($id)
     {
         $supplierEdit = Supplier::where('id',$id)->get();
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
         // dd($supplierEdit);
-        return view('supplier/edit-supplier', compact('supplierEdit'));
+        return view('supplier/edit-supplier', compact('supplierEdit','penjualan'));
         
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Supplier;
 use App\Barang;
 use App\Pembelian;
+use App\Penjualan;
 
 use App\DetailPembelian;
 use PhpParser\Builder\Function_;
@@ -21,7 +22,8 @@ class pembelianController extends Controller
     public function index()
     {
         $suppliers=Supplier::all();
-        return view('pembelian.pilihan-supplier',compact('suppliers'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('pembelian.pilihan-supplier',compact('suppliers','penjualan'));
         //
     }
 
@@ -33,7 +35,8 @@ class pembelianController extends Controller
             $sup = $supp->suppliers->nama_agen;
         }
         
-        return view('pembelian.detail-transaksi', compact('detailPembelians', 'noTrans','sup'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('pembelian.detail-transaksi', compact('detailPembelians', 'noTrans','sup','penjualan'));
     }
 
     /**
@@ -100,7 +103,8 @@ class pembelianController extends Controller
     {
         $supplier=Supplier::find($id);
         $barangs=Barang::all();
-        return view('pembelian.index',compact('supplier','barangs'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('pembelian.index',compact('supplier','barangs','penjualan'));
         //
     }
 

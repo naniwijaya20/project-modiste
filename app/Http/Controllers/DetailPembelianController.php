@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DetailPembelian;
+use App\Penjualan;
 use Illuminate\Http\Request;
 
 class DetailPembelianController extends Controller
@@ -14,6 +15,7 @@ class DetailPembelianController extends Controller
      */
     public function index()
     {
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
         //
     }
 

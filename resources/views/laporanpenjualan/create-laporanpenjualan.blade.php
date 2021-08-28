@@ -1,4 +1,5 @@
 @extends('layout-admin.main')
+@section('judul', 'Laporan Penjualan')
 
 @section('tabel')
 <div class="single-product-tab-area mg-b-30">

@@ -11,4 +11,12 @@ class Pelanggan extends Model
     protected $fillable = [
         'nama','no_hp','email','alamat','user_name','password','konfirmasi_password'
     ];
+    public function detailPembelian()
+    {
+        return $this->hasMany('App\DetailPembelian');
+    }
+    public function detailPenjualan()
+    {
+        return $this->hasMany('App\DetailPenjualan');
+    }
 }

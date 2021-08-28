@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pembelian;
+use App\Penjualan;
 use DB;
 
 class LaporanPembelianController extends Controller
@@ -27,8 +28,9 @@ class LaporanPembelianController extends Controller
 
         //dd($dari);
 
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
         $all = Pembelian::all();
-    	return view('laporanpembelian.index',compact('title','data','tanggal','nilai','dari','sampai', 'all'));
+    	return view('laporanpembelian.index',compact('title','data','tanggal','nilai','dari','sampai', 'all','penjualan'));
   //  dd($all);
     }
 
@@ -51,7 +53,7 @@ class LaporanPembelianController extends Controller
         $dari = $tanggal1;
         $sampai = $tanggal2;
 
-    	return view('laporanpembelian.index',compact('title','data','tanggal','dari','sampai','all'));
+    	return view('laporanpembelian.index',compact('title','data','tanggal','dari','sampai','all','penjualan'));
     }
 
     public function tanggal1(Request $request){
@@ -72,7 +74,8 @@ class LaporanPembelianController extends Controller
         $sampai = $tanggal2;
         
 
-        return view('laporanpembelian.index',compact('title','data','tanggal','dari','sampai'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('laporanpembelian.index',compact('title','data','tanggal','dari','sampai','penjualan'));
     }
 
 

@@ -1,4 +1,5 @@
 @extends('layout-admin.main')
+@section('judul', 'Detail Penjualan')
 @section('tabel')
 <div class="product-status mg-b-30">
   <div class="container-fluid">
@@ -6,13 +7,13 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="product-status-wrap">
           <h4>Tanggal Pembelian</h4>
-          <p style="color: white;"><?= date('d F Y') ?></p>
+          <p style="color: white;">{{ $tgl->tanggal}}</p>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="product-status-wrap">
           <h4>Nama Pelanggan</h4>
-          <p style="color: white;"></p>
+          <p style="color: white;">{{$detail->pelanggans->nama}}</p>
         </div>
       </div>
     </div>
@@ -24,13 +25,13 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="product-status-wrap">
           <h4>Alamat</h4>
-          <p style="color: white;"><?= date('d F Y') ?></p>
+          <p style="color: white;">{{$detail->pelanggans->alamat}}</p>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="product-status-wrap">
           <h4>No Telepon</h4>
-          <p style="color: white;"></p>
+          <p style="color: white;">{{$detail->pelanggans->no_hp}}</p>
         </div>
       </div>
     </div>

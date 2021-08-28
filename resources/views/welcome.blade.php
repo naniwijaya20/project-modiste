@@ -11,7 +11,7 @@
 
         <!-- Styles -->
         <style>
-            html, body {\
+            html, body {
 
                 background-color: #fff;
                 color: #636b6f;
@@ -74,7 +74,7 @@
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <!-- <a href="{{ route('register') }}">Register</a> -->
                         @endif
                     @endauth
                 </div>

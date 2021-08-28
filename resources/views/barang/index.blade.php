@@ -1,5 +1,5 @@
 @extends('layout-admin.main')
-
+@section('judul', 'Barang')
 @section('tabel')
 <div class="product-status mg-b-30">
     <div class="container-fluid">
@@ -35,8 +35,8 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>{{$item->nama_barang}}</td>
-                            <td>{{$item->harga}}</td>
-                            <td>{{$item->harga_agen}}</td>
+                            <td>Rp {{ number_format($item->harga,2,",",",") }}</td>
+                            <td>Rp {{number_format($item->harga_agen,2,",",",") }}</td>
                             <td>{{$item->ukuran}}</td>
                             <td>{{$item->warna}}</td>
                             <td>{{$item->stok_barang}}</td>

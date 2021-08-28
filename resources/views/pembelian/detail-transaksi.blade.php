@@ -1,5 +1,7 @@
 @extends('layout-admin.main')
 @section('tabel')
+@section('judul', 'Pembelian')
+
 @if(session('message'))
 <div style="margin:10px 20px" class="alert alert-success" role="alert">
   {{ session('message')}}
@@ -48,17 +50,20 @@
               <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{$item->barangs->nama_barang}}</td>
-                <td>{{$item->barangs->harga_agen}}</td>
+                <td>Rp {{ number_format($item->barangs->harga_agen, 2,",","," )}}</td>
                 <td>{{$item->barangs->ukuran}}</td>
                 <td>{{$item->barangs->warna}}</td>
                 <td>{{$item->jumlah}}</td>
-                <td>{{$total = $item->barangs->harga_agen * $item->jumlah}}</td>
+                <?php $total = $item->barangs->harga_agen * $item->jumlah ?>
+                <td> Rp {{ number_format($total, 2,",","," ) }}</td>
                 <?php $totalSemua = $totalSemua + $total ?>
               </tr>
+
+              {{ number_format($item->harga,2,",",",") }}
               @endforeach
               <tr>
                 <th colspan="6">Total Semua</th>
-                <th>Rp. {{$totalSemua}}</th>
+                <th>Rp. {{ number_format( $totalSemua, 2,",",",")}}</th>
               </tr>
             </table>
           </div>

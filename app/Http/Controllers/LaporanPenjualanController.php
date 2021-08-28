@@ -27,8 +27,9 @@ class LaporanPenjualanController extends Controller
 
         //dd($dari);
 
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
         $all = penjualan::all();
-    	return view('laporanpenjualan.index',compact('title','data','tanggal','nilai','dari','sampai', 'all'));
+    	return view('laporanpenjualan.index',compact('title','data','tanggal','nilai','dari','sampai', 'all','penjualan'));
   //  dd($all);
     }
 
@@ -51,7 +52,8 @@ class LaporanPenjualanController extends Controller
         $dari = $tanggal1;
         $sampai = $tanggal2;
 
-    	return view('laporanpenjualan.index',compact('title','data','tanggal','dari','sampai','all'));
+    	$penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('laporanpenjualan.index',compact('title','data','tanggal','dari','sampai','all','penjualan'));
     }
 
     public function tanggal1(Request $request){
@@ -72,7 +74,8 @@ class LaporanPenjualanController extends Controller
         $sampai = $tanggal2;
         
 
-        return view('laporanpenjualan.index',compact('title','data','tanggal','dari','sampai'));
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+        return view('laporanpenjualan.index',compact('title','data','tanggal','dari','sampai','penjualan'));
     }
 
 

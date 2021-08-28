@@ -1,4 +1,5 @@
 @extends('layout-admin.main')
+@section('judul', 'Pelanggan')
 
 @section('tabel')
 <div class="product-status mg-b-30">
