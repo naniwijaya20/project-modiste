@@ -12,4 +12,9 @@ class Supplier extends Model
     protected $fillable = [
         'nama_agen', 'alamat'
     ];
+
+    public function detailPembelian()
+    {
+        return $this->hasMany('App\DetailPembelian');
+    }
 }

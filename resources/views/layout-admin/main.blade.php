@@ -134,8 +134,8 @@
                     <div class="header-top-menu tabl-d-n">
                       <div class="breadcome-heading">
                         <form role="search" class="">
-                          <input type="text" placeholder="Search..." class="form-control">
-                          <a href=""><i class="fa fa-search"></i></a>
+                          <!-- <input type="text" placeholder="Search..." class="form-control"> -->
+                          <a href=""></a>
                         </form>
                       </div>
                     </div>
@@ -434,7 +434,7 @@
                   
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="breadcomb-report">
-                      <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="icon nalika-download"></i></button>
+                      <!-- <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="icon nalika-download"></i></button> -->
                     </div>
                   </div>
                 </div>

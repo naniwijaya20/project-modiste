@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\DetailPembelian;
 use App\Penjualan;
+
+use App\Barang;
+use App\Supplier;
+use App\Pembelian;
+
 use Illuminate\Http\Request;
 
 class DetailPembelianController extends Controller
@@ -46,9 +51,17 @@ class DetailPembelianController extends Controller
      * @param  \App\DetailPembelian  $detailPembelian
      * @return \Illuminate\Http\Response
      */
-    public function show(DetailPembelian $detailPembelian)
+    public function show($id)
     {
-        //
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
+
+        $dp=DetailPembelian::where('pembelian_id', $id)->get();
+        $tgl=Pembelian::find($id);
+        $detail=DetailPembelian::where('pembelian_id', $id)->first();
+
+
+        return view('detailpembelian.index',compact('dp','tgl','detail', 'penjualan'));
+        
     }
 
     /**

@@ -56,8 +56,8 @@ $tottotal = 0;
 							@foreach($data as $e=>$dt)
 								<?php $tottotal += $dt->retribusi; ?>
 								<tr>
-									<td>{{$e + 1 }}</td>
-						            <td><?php echo date('d F Y', strtotime($dt->tanggal)); ?></td>
+									<td><a href="detailpembelian/{{ $dt->id }}">{{$e + 1 }} </a> </td>
+						            <td> <?php echo date('d F Y', strtotime($dt->tanggal)); ?></td>
 						            <td class="text-left">Rp. {!! number_format($dt->total,2,",",".") !!}</td>
 						            
 							@endforeach

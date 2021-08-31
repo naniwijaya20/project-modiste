@@ -21,6 +21,7 @@
                             <th>User_Name</th>
                             <th>Password</th>
                             <th>Konfirmasi_password</th>
+                            <th>Action</th>
                         </tr>
                         <?php $no = 1 ;
                         $total = 0;

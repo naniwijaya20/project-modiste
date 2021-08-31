@@ -21,12 +21,13 @@ Route::get('/', function () {
 
 Route::get('detail-transaksi/{id}', [pembelianController::class, 'detailTransaksi'])->name('pembelian.detail-transaksi');
 
-Route::resource('barang','BarangController');
+Route::resource('barang','barangController');
 Route::resource('pelanggan','pelangganController');
 Route::resource('supplier','supplierController');
 Route::resource('pembelian','pembelianController');
 Route::resource('penjualan','PenjualanController');
 Route::resource('detailpenjualan','DetailPenjualanConroller');
+Route::resource('detailpembelian','DetailPembelianController');
 
 Route::resource('laporanpenjualan','LaporanPenjualanController');
 Route::get('laporanpenjualan','LaporanPenjualanController@index');

@@ -20,4 +20,8 @@ class DetailPembelian extends Model
     {
         return $this->belongsTo('App\Supplier', 'supplier_id');
     }
+    public function pembelians()
+    {
+        return $this->belongsTo('App\Pembelian', 'pembelian_id');
+    }
 }

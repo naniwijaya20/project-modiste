@@ -53,6 +53,7 @@ class LaporanPembelianController extends Controller
         $dari = $tanggal1;
         $sampai = $tanggal2;
 
+        $penjualan=Penjualan::orderBy('id', 'DESC')->get();
     	return view('laporanpembelian.index',compact('title','data','tanggal','dari','sampai','all','penjualan'));
     }
 
