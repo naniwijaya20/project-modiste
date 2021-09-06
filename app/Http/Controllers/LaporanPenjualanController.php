@@ -34,26 +34,36 @@ class LaporanPenjualanController extends Controller
     }
 
     public function tanggal(Request $request){
-    	$tanggal1 = date('Y-m-d',strtotime($request->tanggal1));
-    	$tanggal2 = date('Y-m-d',strtotime($request->tanggal2));
+    	$tanggal1 = date('Y-m-d',
+        strtotime($request->tanggal1));
+    	$tanggal2 = date('Y-m-d',
+        strtotime($request->tanggal2));
 
-    	$title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
-    	$data = penjualan::whereBetween('tanggal',[$tanggal1,$tanggal2])
+    	$title = "Laporan Pembayaran dari Tanggal ".
+        date('d-M-Y',strtotime($tanggal1)).
+        " sampai Tanggal ".date('d-M-Y',
+        strtotime($tanggal2));
+    	$data = penjualan::whereBetween
+        ('tanggal',[$tanggal1,$tanggal2])
                 ->orderBy('created_at')->get();
 
         $all = penjualan::all();
 
         $tanggal = array();
         foreach ($data as $dt) {
-            array_push($tanggal, $dt->created_at);
+            array_push($tanggal, 
+            $dt->created_at);
         }
         $tanggal = json_encode($tanggal);
 
         $dari = $tanggal1;
         $sampai = $tanggal2;
 
-    	$penjualan=Penjualan::orderBy('id', 'DESC')->get();
-        return view('laporanpenjualan.index',compact('title','data','tanggal','dari','sampai','all','penjualan'));
+    	$penjualan=Penjualan::
+        orderBy('id', 'DESC')->get();
+        return view('laporanpenjualan.index',
+        compact('title','data','tanggal',
+        'dari','sampai','all','penjualan'));
     }
 
     public function tanggal1(Request $request){
