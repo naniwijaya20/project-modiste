@@ -44,9 +44,9 @@
                                                 <button type="submit"
                                                     class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save
                                                 </button>
-                                                <button type="submit"
+                                                <!-- <button type="submit"
                                                     class="btn btn-ctl-bt waves-effect waves-light">Discard
-                                                </button>
+                                                </button> -->
                                             </div>
                                         </div>
                                     </div>
