@@ -10,7 +10,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="review-tab-pro-inner">
             <ul id="myTab3" class="tab-review-design">
-              <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Product Edit</a></li>
+              <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Tambah Barang</a></li>
             </ul>
             <div id="myTabContent" class="tab-content custom-product-edit">
               <form action="{{route('barang.store')}}" method="POST" enctype="multipart/form-data">
@@ -21,7 +21,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <div class="review-content-section">
                         <div class="input-group mg-b-pro-edt">
-                          <span class="input-group-addon"><i class="fa fa-archive" aria-hidden="true"></i></span>
+                          <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                           <input name="nama_barang" type="text" class="form-control" placeholder="Nama Barang" required>
                         </div>
                         <div class="input-group mg-b-pro-edt">

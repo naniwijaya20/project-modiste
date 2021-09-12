@@ -17,7 +17,7 @@ class barangController extends Controller
     {
         $penjualan=Penjualan::orderBy('id', 'DESC')->get();
         $barang=Barang::all();
-        return view('barang.index',compact('barang','penjualan'));
+        return view('barang.index', compact('barang','penjualan'));
         //
     }
 

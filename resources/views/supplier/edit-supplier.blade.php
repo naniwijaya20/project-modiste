@@ -12,7 +12,7 @@
                     <div class="review-tab-pro-inner">
                         <ul id="myTab3" class="tab-review-design">
                             <li class="active"><a href="#description"><i class="icon nalika-edit"
-                                        aria-hidden="true"></i> Product Edit</a></li>
+                                        aria-hidden="true"></i> Edit Supplier</a></li>
                         </ul>
                         <div id="myTabContent" class="tab-content custom-product-edit">
                             @foreach($supplierEdit as $item)
