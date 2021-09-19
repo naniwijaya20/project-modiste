@@ -5,9 +5,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
                 <div class="product-status-wrap">
                     <h4>Tabel Barang</h4>
+                  
+                    
                     <div class="add-product">
+                        
                         <a href="barang/create">Tambah Barang</a>
                     </div>
                     @if(session('status'))
@@ -15,8 +19,10 @@
                             {{ session('status')}}
                         </div>
                     @endif
+                    <input id='input' onkeyup='searchTable()' name="harga" type="text" class="form-control" placeholder="Cari Barang" required>
+
                     <table>
-                        <tr>
+                        <thead>
                             <th>No</th>
                             <th>Nama Barang</th>
                             <th>Harga Barang</th>
@@ -26,7 +32,7 @@
                             <th>Stok Barang</th>
                             <th>Gambar barang</th>
                             <th>Action</th>
-                        </tr>
+                        </thead>
                         <?php $no = 1 ;
                         $total = 0;
                         $totalSemua = 0;
@@ -73,3 +79,34 @@
     </div>
 </div>
 @endsection
+
+<script>
+function searchTable() {
+    var input;
+    var saring;
+    var status; 
+    var tbody; 
+    var tr; 
+    var td;
+    var i; 
+    var j;
+    input = document.getElementById("input");
+    saring = input.value.toUpperCase();
+    tbody = document.getElementsByTagName("tbody")[0];;
+    tr = tbody.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(saring) > -1) {
+                status = true;
+            }
+        }
+        if (status) {
+            tr[i].style.display = "";
+            status = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
