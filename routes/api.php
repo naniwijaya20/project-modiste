@@ -17,12 +17,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('barang', 'API\BarangAPIController');
-Route::resource('penjualan', 'API\PenjualanAPIController');
-Route::resource('detailpenjualan', 'API\DetailPenjualanController');
-Route::resource('keranjangpembelian', 'API\KeranjangPembelianAPIController');
-// Route::resource('keranjanpembelian', 'API');
+Route::group(['middleware' => 'api'], function ($router) {
 
+    Route::post('login',[ App\Http\Controllers\API\AuthAPIController::class,'login']);
+    Route::post('logout', [ App\Http\Controllers\API\AuthAPIController::class,'logout']);
+    Route::post('refresh', [ App\Http\Controllers\API\AuthAPIController::class,'refresh']);
+    Route::post('me', [ App\Http\Controllers\API\AuthAPIController::class,'me']);
+});
+
+Route::group(['middleware' => 'jwt.auth'], function ($router) {
+
+    Route::resource('barang', 'API\BarangAPIController');
+    Route::resource('penjualan', 'API\PenjualanAPIController');
+    Route::resource('detailpenjualan', 'API\DetailPenjualanController');
+    Route::resource('keranjangpembelian', 'API\KeranjangPembelianAPIController');
+    // Route::resource('keranjanpembelian', 'API');
+});
 
 
 

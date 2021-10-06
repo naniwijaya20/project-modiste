@@ -13,7 +13,7 @@
         <style>
             html, body {
 
-                background-color: #fff;
+                background-color: #000224;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #ffffff;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -67,6 +67,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
+            <div background-color= "#000224">
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -83,9 +84,11 @@
             <div class="content">
                 <img src="/img\logo/logo Ms.png" alt="logo">
                 <div class="title m-b-md">
+                    <div color="#ffffff">
                    Butik Modiste Shofi Samarinda
                 </div>
             </div>
         </div>
+    </div>
     </body>
 </html>

@@ -59,9 +59,12 @@
   <!-- responsive CSS
 		============================================ -->
   <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+
   <!-- modernizr JS
 		============================================ -->
+
   <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js')  }}"></script>
+  
 </head>
 
 <body>
@@ -473,6 +476,9 @@
   <!-- jquery
 		============================================ -->
   <script src="{{ asset('js/vendor/jquery-1.12.4.min.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.js"></script>
+
   <!-- bootstrap JS
 		============================================ -->
   <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -517,6 +523,9 @@
   <!-- main JS
 		============================================ -->
   <script src="{{ asset('js/main.js') }}"></script>
+
+  
+  @stack('dataTables')
   @stack('addData')
 </body>
 

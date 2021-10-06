@@ -23,6 +23,7 @@
 
                         <div class="box-footer" style="margin-top: 20px;">
                             <button type="submit" class="btn btn-primary" >Cek</button>
+                            <a href="/laporanpenjualan-pdf?tanggal1=2021-08-01&tanggal2=2021-10-03" target="_blank" class="btn btn-primary" >Cetak</a>
 
                             <!-- <button type="submit" formaction="{{ url('laporan1') }}">Print</button> -->
                         </div>

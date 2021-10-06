@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pembelian;
 use App\Penjualan;
+use PDF;
 use DB;
 
 class LaporanPembelianController extends Controller
@@ -39,8 +40,8 @@ class LaporanPembelianController extends Controller
     	$tanggal2 = date('Y-m-d',strtotime($request->tanggal2));
 
     	$title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
-    	$data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])
-                ->orderBy('created_at')->get();
+    	$data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])->groupBy('tanggal')
+                ->selectRaw('* ,sum(total) as total')->orderBy('created_at')->get();
 
         $all = Pembelian::all();
 
@@ -87,6 +88,8 @@ class LaporanPembelianController extends Controller
 
         $title = "Laporan Pembayaran dari Tanggal ".date('d-M-Y',strtotime($tanggal1))." sampai Tanggal ".date('d-M-Y',strtotime($tanggal2));
         $data = Pembelian::whereBetween('tanggal',[$tanggal1,$tanggal2])
+                ->groupBy('tanggal')
+                ->selectRaw('* ,sum(total) as total')
                 ->orderBy('created_at')->get();
 
         $tanggal = array();
@@ -98,8 +101,8 @@ class LaporanPembelianController extends Controller
         $dari = $tanggal1;
         $sampai = $tanggal2;     
 
-        // $pdf = PDF::loadView('laporanpembelian.note',compact('title','data','tanggal','dari','sampai','tanggal1','tanggal2'))->setPaper([0,0,500,402],'landscape');
-        // return $pdf->stream('Laporan Pembelian.pdf');
+        $pdf = PDF::loadView('laporanpembelian.pdf-pembelian',compact('title','data','tanggal','dari','sampai','tanggal1','tanggal2'))->setPaper([0,0,500,402],'landscape');
+        return $pdf->stream();
 
     }
 }

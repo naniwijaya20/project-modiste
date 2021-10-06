@@ -23,6 +23,7 @@
 
                         <div class="box-footer" style="margin-top: 20px;">
                             <button type="submit" class="btn btn-primary" >Cek</button>
+                            <a href="/laporanpembelian-pdf?tanggal1=2021-08-01&tanggal2=2021-10-03" target="_blank" class="btn btn-primary" >Cetak</a>
 
                             <!-- <button type="submit" formaction="{{ url('laporanpembelian') }}">Print</button> -->
                         </div>
@@ -59,7 +60,7 @@ $tottotal = 0;
 									<td><a href="detailpembelian/{{ $dt->id }}">{{$e + 1 }} </a> </td>
 						            <td> <?php echo date('d F Y', strtotime($dt->tanggal)); ?></td>
 						            <td class="text-left">Rp. {!! number_format($dt->total,2,",",".") !!}</td>
-						            
+                                </tr>
 							@endforeach
 					</tbody>
 					<tbody>

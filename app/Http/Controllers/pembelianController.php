@@ -21,10 +21,18 @@ class pembelianController extends Controller
      */
     public function index()
     {
-        $suppliers=Supplier::all();
+        // $suppliers=Supplier::all();
         $penjualan=Penjualan::orderBy('id', 'DESC')->get();
-        return view('pembelian.pilihan-supplier',compact('suppliers','penjualan'));
+        // return view('pembelian.pilihan-supplier',compact('suppliers','penjualan'));
         //
+
+        $detailPembelian=DetailPembelian::all();
+        $barangs=Barang::all();
+        $suppp=Supplier::all();
+
+        $detailPembelian=DetailPembelian::orderBy('id', 'DESC')->get();
+        return view('pembelian.index',compact('detailPembelian','penjualan','barangs','suppp'));
+        
     }
 
     
@@ -72,7 +80,7 @@ class pembelianController extends Controller
             $data = new DetailPembelian();
             $data->pembelian_id = $lastPembelian->id;
             $data->barang_id = $namaBar;
-            $data->supplier_id = $request->supplier;
+            $data->supplier_id = $request->namaSupplier[$key];
             $data->jumlah = $request->jumlahBarang[$key];
 
             $barang = Barang::where('id', $namaBar)->first();
